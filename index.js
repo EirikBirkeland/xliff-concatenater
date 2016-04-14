@@ -1,7 +1,8 @@
 "use strict"
 const fs = require('fs')
-const fileNames = process.argv.slice(2) // get array of all extra arguments
 const XRegExp = require('xregexp')
+
+const fileNames = process.argv.slice(2) // get array of all extra arguments
 
 // Using sync rather than async should guarantee that the file order is preserved
 const data = fileNames.map($_=>{
