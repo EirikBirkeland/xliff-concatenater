@@ -18,7 +18,7 @@ const segmentsOnly = data.map($_=>{
       '$1') // flag(s)
 })
 
-// Create new XLIFF
+// Build template and insert data 
 const newXliff =
 `<?xml version="1.0" encoding="UTF-8"?>
 <xliff version='1.2'
