@@ -11,12 +11,11 @@ const data = fileNames.map($_=>{
 
 const docs = []
 const result = []
-const reBody = XRegExp('.*<body>(.*)</body>.*')
 const segmentsOnly = data.map($_=>{
    return XRegExp.replace(
       $_, // element to operate on
-      XRegExp('.*<body>(.*)</body>.*'), // pattern
-      's') // flag(s)
+      XRegExp('.*<body>(.*?)</body>.*', 's'), // pattern
+      '$1') // flag(s)
 })
 
 // Create new XLIFF
