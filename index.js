@@ -15,8 +15,8 @@ const result = []
 const segmentsOnly = data.map($_=>{
    return XRegExp.replace(
       $_, // element to operate on
-      XRegExp('.*<body>(.*?)</body>.*', 's'), // pattern
-      '$1') // flag(s)
+      XRegExp('.*<body>(.*?)</body>.*', 's'), // match pattern
+      '$1') // replace pattern
 })
 
 // Build template and insert data 
