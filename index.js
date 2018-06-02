@@ -2,17 +2,16 @@
 const fs = require('fs')
 const XRegExp = require('xregexp')
 
-const fileNames = process.argv.slice(2) // get array of all extra arguments
+// get array of all extra arguments
+const fileNames = process.argv.slice(2)
 
-// Using sync rather than async should guarantee that the file order is preserved
-const data = fileNames.map($_=>{
-   const a = fs.readFileSync($_, 'utf8')
-   return a
+const data = fileNames.map($_ => {
+   return fs.readFileSync($_, 'utf8')
 })
 
 const docs = []
 const result = []
-const segmentsOnly = data.map($_=>{
+const segmentsOnly = data.map($_ => {
    return XRegExp.replace(
       $_, // element to operate on
       XRegExp('.*<body>(.*?)</body>.*', 's'), // match pattern
